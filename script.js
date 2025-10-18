@@ -1,0 +1,5 @@
+function updateScore(element,value){element.textContent=value;element.classList.add('update');setTimeout(()=>element.classList.remove('update'),500);}
+const matches=document.querySelectorAll('.match');
+setInterval(()=>{matches.forEach(match=>{let home=Math.floor(Math.random()*3);let away=Math.floor(Math.random()*3);let status=Math.floor(Math.random()*90)+1;updateScore(match.querySelector('.score'),`${home} - ${away}`);updateScore(match.querySelector('.status'),`${status}'`);});},5000);
+document.querySelector('.play-vf').addEventListener('click',()=>{let home=Math.floor(Math.random()*5);let away=Math.floor(Math.random()*5);alert(`Virtual Futbol nəticəsi: ${home} - ${away}`);});
+document.querySelector('.play-vb').addEventListener('click',()=>{let home=Math.floor(Math.random()*100);let away=Math.floor(Math.random()*100);alert(`Virtual Basketbol nəticəsi: ${home} - ${away}`);});
